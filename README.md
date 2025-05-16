@@ -22,49 +22,53 @@ Create custom Spotify playlists based on real concert setlists using the Setlist
 ```bash
 git clone https://github.com/your-username/setlistify-cli.git
 cd setlistify-cli
+```
 
-### 2. Install Dependencies 
+### 2. Install Dependencies
 
 ```bash
 npm install
+```
 
-### 3. Set Up Environment Variables 
+### 3. Set Up Environment Variables
 
-Create a .env file using the example template:
+Create a `.env` file using the example template:
 
+```bash
 cp .env.example .env
+```
 
 Then fill in the following credentials:
 
-# .env
+```env
 SPOTIFY_CLIENT_ID=your_spotify_client_id
 SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
 SPOTIFY_REDIRECT_URI=http://localhost:8888/callback
 
 SETLISTFM_API_KEY=your_setlistfm_api_key
+```
 
 ---
 
 ## 🧠 How It Works
 
-1. Authorize Spotify: A browser tab will open and ask you to log in.
-
-2. Search Artist: Enter a band name (e.g., `Radiohead`).
-
-3. Pick a Setlist: Choose from recent shows, optionally include openers or other performers.
-
-4. Confirm Playlist Name: Choose what to call your playlist.
-
-5. Done!: Your playlist appears in your Spotify account 🎉
+1. **Authorize Spotify**: A browser tab will open and ask you to log in.  
+2. **Search Artist**: Enter a band name (e.g., `Radiohead`).  
+3. **Pick a Setlist**: Choose from recent shows, optionally include openers or other performers.  
+4. **Confirm Playlist Name**: Choose what to call your playlist.  
+5. **Done!**: Your playlist appears in your Spotify account 🎉
 
 ---
 
 ## 🖥️ Usage
 
-\`node index.js\`
+```bash
+node index.js
+```
 
 You'll be prompted step-by-step. Here's what a session might look like:
 
+```
 Enter the artist/band name: Arctic Monkeys
 
 🎤 Recent Setlists:
@@ -84,32 +88,33 @@ Include setlist from The Last Shadow Puppets? (6 songs) (y/n): n
 🎧 Enter a name for your new Spotify playlist: AM Live NYC
 
 ✅ Playlist created successfully!
+```
 
 ---
 
-## API Keys and Setup Info
+## 🪪 API Keys and Setup Info
 
-🎧 Spotify API
-Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
+### 🎧 Spotify API
 
-Create a new app
+1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
+2. Create a new app
+3. Add the redirect URI:
+   ```
+   http://localhost:8888/callback
+   ```
+4. Copy your **Client ID** and **Client Secret** into `.env`
 
-Add the redirect URI:
-http://127.0.0.1:8888/callback
+### 🎤 Setlist.fm API
 
-Copy your Client ID and Client Secret into .env
-
-🎤 Setlist.fm API
-Create an account at setlist.fm
-
-Request an API key
-
-Add it to .env under SETLISTFM_API_KEY
+1. Create an account at [setlist.fm](https://www.setlist.fm/)
+2. [Request an API key](https://www.setlist.fm/settings/api)
+3. Add it to `.env` under `SETLISTFM_API_KEY`
 
 ---
 
 ## 👨‍💻 Project Structure
 
+```
 setlistify-cli/
 ├── index.js                # CLI entry point
 ├── auth.js                 # Handles Spotify OAuth
@@ -119,12 +124,18 @@ setlistify-cli/
 ├── .gitignore
 ├── package.json
 └── README.md
+```
+
+---
 
 ## 📜 License
 
 This project is licensed under the [MIT License](LICENSE).
 
+---
+
 ## 🙏 Attribution
+
 This project uses the [Setlist.fm API](https://www.setlist.fm/api) to retrieve setlist data.  
 Please make sure to comply with their [Terms of Service](https://www.setlist.fm/legal/terms-of-service) if you use this tool or adapt it for public distribution.
 
