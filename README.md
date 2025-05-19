@@ -20,7 +20,7 @@ Create custom Spotify playlists based on real concert setlists using the Setlist
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/setlistify-cli.git
+git clone https://github.com/Mapietrzak/setlistify-cli.git
 cd setlistify-cli
 ```
 
